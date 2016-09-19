@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KCCollectionView_Example' do
+  pod 'KCCollectionView', :path => '../'
+
+  target 'KCCollectionView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
