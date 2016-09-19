@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KCCollectionView'
-  s.version          = '0.1.0'
-s.summary          = 'KCCollectionView does all of the hard work for you to set up a Collection View.'
+  s.version          = '0.0.1'
+  s.summary          = 'KCCollectionView does all of the hard work for you to set up a Collection View.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -50,7 +50,7 @@ Features
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'KCCollectionView/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'KCCollectionView' => ['KCCollectionView/Assets/*.png']
   # }
