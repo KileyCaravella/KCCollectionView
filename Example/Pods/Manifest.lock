@@ -1,0 +1,16 @@
+PODS:
+  - KCCollectionView (0.1.0)
+
+DEPENDENCIES:
+  - KCCollectionView (from `../`)
+
+EXTERNAL SOURCES:
+  KCCollectionView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  KCCollectionView: a6b48a18c43e04c81cc16ef8ba1ad07b89e19c61
+
+PODFILE CHECKSUM: 99708e84575ca56309e0b32aa0c48478da503baa
+
+COCOAPODS: 1.0.1

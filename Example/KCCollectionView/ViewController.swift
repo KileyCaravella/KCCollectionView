@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KCCollectionViewPod
+import KCCollectionView
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var exampleCollectionView: KCCollectionView!

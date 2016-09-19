@@ -1,0 +1,6 @@
+framework module KCCollectionView {
+  umbrella header "KCCollectionView-umbrella.h"
+
+  export *
+  module * { export * }
+}
