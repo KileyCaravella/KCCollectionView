@@ -11,17 +11,20 @@ import KCCollectionView
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var exampleCollectionView: KCCollectionView!
+    var exampleInitCollectionView = KCCollectionView(frame: CGRectMake(0, UIScreen.mainScreen().bounds.height*3/4, 300, 150))
     
     // MARK: - Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupExampleCollectionView()
+        setupInitExampleCollectionView()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         exampleCollectionView.collectionViewLayout = exampleCollectionView.layout
+        exampleInitCollectionView.collectionViewLayout = exampleInitCollectionView.layout
     }
     
     override func shouldAutorotate() -> Bool {
@@ -37,6 +40,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         exampleCollectionView.minimumRowSpacing = 5
         exampleCollectionView.delegate = self
         exampleCollectionView.dataSource = self
+    }
+    
+    func setupInitExampleCollectionView() {
+        exampleInitCollectionView.backgroundColor = UIColor.clearColor()
+        exampleInitCollectionView.numberCellsInView = 25
+        exampleInitCollectionView.equalCellsInRowsAndColumns = true
+        exampleInitCollectionView.minimumColumnSpacing = 0
+        exampleInitCollectionView.minimumRowSpacing = 0
+        exampleInitCollectionView.delegate = self
+        exampleInitCollectionView.dataSource = self
+        view.addSubview(exampleInitCollectionView)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

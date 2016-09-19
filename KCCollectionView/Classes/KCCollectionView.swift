@@ -42,6 +42,11 @@ public class KCCollectionView: UICollectionView {
         }
     }
     
+    private func setupSelf() {
+        registerClass(KCCollectionViewCell.self, forCellWithReuseIdentifier: "KCCollectionViewCell")
+        dataSource = self
+    }
+    
     public var layout: UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = minimumRowSpacing
@@ -53,8 +58,26 @@ public class KCCollectionView: UICollectionView {
     // MARK: - Base Public
     
     public override func awakeFromNib() {
-        registerClass(KCCollectionViewCell.self, forCellWithReuseIdentifier: "KCCollectionViewCell")
-        dataSource = self
+        setupSelf()
+    }
+    
+    override public init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: layout)
+        setupSelf()
+    }
+    
+    public convenience init(frame: CGRect) {
+        self.init(frame: frame, collectionViewLayout: UICollectionViewLayout())
+        setupSelf()
+    }
+    
+    public convenience init() {
+        self.init(frame: CGRectZero, collectionViewLayout: UICollectionViewLayout())
+        setupSelf()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     public var numberCellsPerRow = 2
