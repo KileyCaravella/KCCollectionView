@@ -12,8 +12,8 @@
 		6C298AB7C062E3F80ED22355D89277B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		70A13A402DF73D9A5ACAC25639249F4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		8DD8BCA8012FD6E44D3F2D770B991FD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		AF18C9EE1D901CAE00C7F81E /* KCCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18C9EC1D901CAE00C7F81E /* KCCollectionView.swift */; };
-		AF18C9EF1D901CAE00C7F81E /* KCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18C9ED1D901CAE00C7F81E /* KCCollectionViewCell.swift */; };
+		AF25E9381D902ABF00DCBE7E /* KCCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25E9361D902ABF00DCBE7E /* KCCollectionView.swift */; };
+		AF25E9391D902ABF00DCBE7E /* KCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25E9371D902ABF00DCBE7E /* KCCollectionViewCell.swift */; };
 		B4D48CF85C0EFC6EDB0D1256E5915FB7 /* KCCollectionView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 287C2965F448B6F3AB891998B5F650B3 /* KCCollectionView-dummy.m */; };
 		D140B2AC8E110EF39A98DA77F48EB918 /* Pods-KCCollectionView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A7AD36ADA36E184514E84551C829747 /* Pods-KCCollectionView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D20B224965E4A65545FD198BD86C6FE3 /* KCCollectionView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FB5C7E2EC9FD10AFDBC5E5134DDE916 /* KCCollectionView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,8 +55,8 @@
 		9F0485B7A13919264DEA058C988F4D0E /* Pods-KCCollectionView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KCCollectionView_Tests-dummy.m"; sourceTree = "<group>"; };
 		A5F2EC5224051A33B4667C17A57ECA71 /* Pods-KCCollectionView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KCCollectionView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		AC780115942913966B519B042275C7C8 /* Pods_KCCollectionView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KCCollectionView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF18C9EC1D901CAE00C7F81E /* KCCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KCCollectionView.swift; sourceTree = "<group>"; };
-		AF18C9ED1D901CAE00C7F81E /* KCCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KCCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF25E9361D902ABF00DCBE7E /* KCCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KCCollectionView.swift; sourceTree = "<group>"; };
+		AF25E9371D902ABF00DCBE7E /* KCCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KCCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD53F37D8AFC028DD81B6725EE2B868C /* Pods-KCCollectionView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KCCollectionView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C67B685A80C373F7875CCEF70BA1A409 /* Pods-KCCollectionView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KCCollectionView_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -182,8 +182,8 @@
 		BDF8248D4D8AC4B3862960CE0DC3AADD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AF18C9EC1D901CAE00C7F81E /* KCCollectionView.swift */,
-				AF18C9ED1D901CAE00C7F81E /* KCCollectionViewCell.swift */,
+				AF25E9361D902ABF00DCBE7E /* KCCollectionView.swift */,
+				AF25E9371D902ABF00DCBE7E /* KCCollectionViewCell.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -348,8 +348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF18C9EF1D901CAE00C7F81E /* KCCollectionViewCell.swift in Sources */,
-				AF18C9EE1D901CAE00C7F81E /* KCCollectionView.swift in Sources */,
+				AF25E9391D902ABF00DCBE7E /* KCCollectionViewCell.swift in Sources */,
+				AF25E9381D902ABF00DCBE7E /* KCCollectionView.swift in Sources */,
 				B4D48CF85C0EFC6EDB0D1256E5915FB7 /* KCCollectionView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
