@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  KCCollectionView
+//  KCCollectionViewPod
 //
-//  Created by Kiley on 09/19/2016.
-//  Copyright (c) 2016 Kiley. All rights reserved.
+//  Created by Kiley Caravella on 9/6/16.
+//  Copyright © 2016 Kiley Caravella. All rights reserved.
 //
 
 import UIKit
@@ -40,7 +40,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
