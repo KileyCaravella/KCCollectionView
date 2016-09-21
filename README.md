@@ -22,7 +22,7 @@ pod "KCCollectionView"
 
 ## Author
 
-Kiley, kiley@intrepid.io
+Kiley
 
 ## License
 

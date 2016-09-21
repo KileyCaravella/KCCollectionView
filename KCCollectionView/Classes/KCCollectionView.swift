@@ -45,6 +45,7 @@ public class KCCollectionView: UICollectionView {
     private func setupSelf() {
         registerClass(KCCollectionViewCell.self, forCellWithReuseIdentifier: "KCCollectionViewCell")
         dataSource = self
+        self.addObserver(self, forKeyPath: "bounds", options: NSKeyValueObservingOptions(), context: nil)
     }
     
     public var layout: UICollectionViewFlowLayout {
@@ -55,11 +56,12 @@ public class KCCollectionView: UICollectionView {
         return layout
     }
     
-    // MARK: - Base Public
+    // MARK: - Initializers
     
     public override func awakeFromNib() {
         setupSelf()
     }
+    
     
     override public init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -68,17 +70,34 @@ public class KCCollectionView: UICollectionView {
     
     public convenience init(frame: CGRect) {
         self.init(frame: frame, collectionViewLayout: UICollectionViewLayout())
-        setupSelf()
     }
     
     public convenience init() {
         self.init(frame: CGRectZero, collectionViewLayout: UICollectionViewLayout())
-        setupSelf()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    deinit {
+        self.removeObserver(self, forKeyPath: "frame")
+    }
+    
+    override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        setCollectionViewLayout(layout, animated: false)
+    }
+    
+    override public var delegate: UICollectionViewDelegate? {
+        didSet {
+        }
+    }
+    
+    public func resetLayout() {
+        setCollectionViewLayout(layout, animated: false)
+    }
+    
+    // MARK: - Public
     
     public var numberCellsPerRow = 2
     public var numberCellsInView = 25

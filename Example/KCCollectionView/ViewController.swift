@@ -1,4 +1,4 @@
-//
+
 //  ViewController.swift
 //  KCCollectionViewPod
 //
@@ -23,8 +23,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        exampleCollectionView.collectionViewLayout = exampleCollectionView.layout
-        exampleInitCollectionView.collectionViewLayout = exampleInitCollectionView.layout
     }
     
     override func shouldAutorotate() -> Bool {
@@ -44,34 +42,56 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func setupInitExampleCollectionView() {
         exampleInitCollectionView.backgroundColor = UIColor.clearColor()
-        exampleInitCollectionView.numberCellsInView = 25
+        exampleInitCollectionView.numberCellsInView = 9
         exampleInitCollectionView.equalCellsInRowsAndColumns = true
         exampleInitCollectionView.minimumColumnSpacing = 0
         exampleInitCollectionView.minimumRowSpacing = 0
-        exampleInitCollectionView.delegate = self
         exampleInitCollectionView.dataSource = self
+        exampleInitCollectionView.delegate = self
+        exampleInitCollectionView.resetLayout()
         view.addSubview(exampleInitCollectionView)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if exampleInitCollectionView == collectionView {
+            return exampleInitCollectionView.collectionView(collectionView, numberOfItemsInSection: section)
+        }
         return exampleCollectionView.collectionView(collectionView, numberOfItemsInSection: section)
     }
     
-    func button(number: Int) -> UIButton {
+    func collViewButton(number: Int) -> UIButton {
         let createButton = UIButton()
         createButton.frame = CGRectMake(0, 0, exampleCollectionView.cellSize.width/2, exampleCollectionView.cellSize.height/2)
-        createButton.layer.borderColor = UIColor.orangeColor().CGColor
+        createButton.layer.borderColor = UIColor.blackColor().CGColor
         createButton.layer.borderWidth = 1
         createButton.setTitle("\(number)", forState: .Normal)
         createButton.titleLabel?.textColor = UIColor.blueColor()
-        createButton.backgroundColor = UIColor.clearColor()
+        createButton.backgroundColor = UIColor.purpleColor()
+        return createButton
+    }
+    
+    func initCollViewButton(number: Int) -> UIButton {
+        let createButton = UIButton()
+        createButton.frame = CGRectMake(0, 0, exampleInitCollectionView.cellSize.width/2, exampleInitCollectionView.cellSize.height/2)
+        createButton.layer.borderColor = UIColor.blackColor().CGColor
+        createButton.layer.borderWidth = 1
+        createButton.setTitle("\(number)", forState: .Normal)
+        createButton.titleLabel?.textColor = UIColor.blueColor()
+        createButton.backgroundColor = UIColor.purpleColor()
         return createButton
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = exampleCollectionView.collectionView(collectionView, cellForItemAtIndexPath: indexPath)
+        var cell = UICollectionViewCell()
+        if exampleInitCollectionView == collectionView {
+            cell = exampleInitCollectionView.collectionView(collectionView, cellForItemAtIndexPath: indexPath)
+            cell.addSubview(initCollViewButton(indexPath.row))
+
+        } else {
+            cell = exampleCollectionView.collectionView(collectionView, cellForItemAtIndexPath: indexPath)
+            cell.addSubview(collViewButton(indexPath.row))
+        }
         cell.backgroundColor = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: 0.8)
-        cell.addSubview(button(indexPath.row))
         return cell
     }
 }
